@@ -1,8 +1,8 @@
 'use client';
 
-import { Section } from '../types/product';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import { Section } from '../types/product';
 
 interface FAQSectionProps {
   sections: Section[];
@@ -11,7 +11,7 @@ interface FAQSectionProps {
 export default function FAQSection({ sections }: FAQSectionProps) {
   const faqSection = sections.find(section => section.type === 'faq');
   const [openItems, setOpenItems] = useState<Set<string>>(new Set());
-  
+
   if (!faqSection || !faqSection.values.length) {
     return null;
   }
@@ -37,30 +37,29 @@ export default function FAQSection({ sections }: FAQSectionProps) {
           {faqSection.values.map((faq) => {
             const isOpen = openItems.has(faq.id);
             return (
-              <div 
+              <div
                 key={faq.id}
                 className="bg-white rounded-xl shadow-sm overflow-hidden"
               >
                 <button
                   onClick={() => toggleItem(faq.id)}
-                  className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200"
+                  className="w-full px-6 py-4 text-left flex items-center justify-between transition-all duration-300 hover:bg-gray-50"
                 >
                   <span className="font-semibold text-gray-900 pr-4 font-bangla">{faq.question}</span>
-                  {isOpen ? (
-                    <ChevronUp className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                  ) : (
+                  <div className={`transition-transform duration-300 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
                     <ChevronDown className="w-5 h-5 text-gray-500 flex-shrink-0" />
-                  )}
+                  </div>
                 </button>
-                
-                {isOpen && (
+
+                <div className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
                   <div className="px-6 pb-4">
-                    <div 
+                    <div
                       className="text-gray-700 leading-relaxed space-y-2 font-bangla"
                       dangerouslySetInnerHTML={{ __html: faq.answer }}
                     />
                   </div>
-                )}
+                </div>
               </div>
             );
           })}

@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { Section } from '../types/product';
-import { Star, Play } from 'lucide-react';
+import { Play, Star } from 'lucide-react';
 import { useState } from 'react';
+import { Section } from '../types/product';
 
 interface TestimonialsSectionProps {
   sections: Section[];
@@ -12,7 +12,7 @@ interface TestimonialsSectionProps {
 export default function TestimonialsSection({ sections }: TestimonialsSectionProps) {
   const testimonialsSection = sections.find(section => section.type === 'testimonials');
   const [playingVideo, setPlayingVideo] = useState<string | null>(null);
-  
+
   if (!testimonialsSection || !testimonialsSection.values.length) {
     return null;
   }
@@ -31,7 +31,7 @@ export default function TestimonialsSection({ sections }: TestimonialsSectionPro
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonialsSection.values.slice(0, 9).map((testimonial, index) => (
-            <div 
+            <div
               key={testimonial.id}
               className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
             >
@@ -91,7 +91,7 @@ export default function TestimonialsSection({ sections }: TestimonialsSectionPro
                   </div>
                 ) : (
                   <blockquote className="text-gray-700 italic leading-relaxed font-bangla">
-                      &quot;{testimonial.testimonial}&quot;
+                    &quot;{testimonial.testimonial}&quot;
                   </blockquote>
                 )}
               </div>

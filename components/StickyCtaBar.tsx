@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { ShoppingCart, Users, Clock } from 'lucide-react';
+import { Clock, ShoppingCart, Users } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function StickyCtaBar() {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,7 +41,7 @@ export default function StickyCtaBar() {
             <div className="text-lg font-bold text-gray-900 font-bangla">৳২,৫০০</div>
             <div className="text-sm text-gray-500 line-through font-bangla">৳৫,০০০</div>
           </div>
-          <button className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-teal-700 transition-all duration-300 flex items-center space-x-2 font-bangla">
+          <button className="bg-gradient-to-r from-green-600 to-teal-600 text-white px-6 py-3 rounded-lg font-semibold hover:from-green-700 hover:to-teal-700 transition-all duration-300 flex items-center space-x-2 font-bangla">
             <ShoppingCart className="w-4 h-4" />
             <span>এনরোল করুন</span>
           </button>

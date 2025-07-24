@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import AboutSection from '../components/AboutSection';
 import CountdownTimer from '../components/CountdownTimer';
 import CourseFactsSection from '../components/CourseFactsSection';
 import FAQSection from '../components/FAQSection';
@@ -78,6 +79,7 @@ export default function Home() {
       <CourseFactsSection checklist={productData.checklist} />
       <InstructorSection sections={productData.sections} />
       <FeaturesSection sections={productData.sections} />
+      <AboutSection sections={productData.sections} />
       <PointersSection sections={productData.sections} />
       <TestimonialsSection sections={productData.sections} />
       <FAQSection sections={productData.sections} />

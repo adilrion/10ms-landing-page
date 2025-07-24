@@ -21,7 +21,7 @@ export default function Footer({ ctaText }: FooterProps) {
                 হাজারো সফল শিক্ষার্থীর সাথে যোগ দিন যারা আমাদের সম্পূর্ণ IELTS কোর্সের মাধ্যমে তাদের টার্গেট ব্যান্ড স্কোর অর্জন করেছেন।
               </p>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button className="bg-gradient-to-r from-blue-600 to-teal-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:from-blue-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl font-bangla">
                 এখনই এনরোল করুন
@@ -31,7 +31,7 @@ export default function Footer({ ctaText }: FooterProps) {
                 ফ্রি PDF ডাউনলোড
               </button>
             </div>
-            
+
             <div className="flex items-center justify-center space-x-8 text-sm text-gray-400">
               <div className="flex items-center space-x-2">
                 <span className="w-2 h-2 bg-green-500 rounded-full"></span>

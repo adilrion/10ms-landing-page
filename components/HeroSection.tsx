@@ -1,9 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { ProductData } from '../types/product';
-import { Play, Clock, Users, Video, Star, Gift, Zap } from 'lucide-react';
+import { Clock, Gift, Play, Star, Users, Video, Zap } from 'lucide-react';
 import { useState } from 'react';
+import { ProductData } from '../types/product';
 
 interface HeroSectionProps {
   data: ProductData;
@@ -11,10 +11,10 @@ interface HeroSectionProps {
 
 export default function HeroSection({ data }: HeroSectionProps) {
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
-  
+
   const mainVideo = data.media.find(m => m.name === 'preview_gallery' && m.resource_type === 'video');
   const thumbnailImage = data.media.find(m => m.name === 'thumbnail' && m.resource_type === 'image');
-  
+
   const visibleFacts = data.checklist.filter(item => item.list_page_visibility).slice(0, 3);
 
   const handleVideoPlay = () => {
@@ -52,7 +52,7 @@ export default function HeroSection({ data }: HeroSectionProps) {
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">
                 {data.title}
               </h1>
-              <div 
+              <div
                 className="text-lg text-gray-600 leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: data.description }}
               />
@@ -61,7 +61,7 @@ export default function HeroSection({ data }: HeroSectionProps) {
             {/* Quick Facts */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {visibleFacts.map((fact, index) => (
-                <div 
+                <div
                   key={fact.id}
                   className="flex items-center space-x-3 p-4 bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
@@ -85,7 +85,7 @@ export default function HeroSection({ data }: HeroSectionProps) {
                   <span className="font-bangla">ফ্রি ট্রায়াল</span>
                 </button>
               </div>
-              
+
               {/* Trust Indicators */}
               <div className="flex items-center space-x-6 mt-4 text-sm text-gray-600">
                 <div className="flex items-center space-x-1">

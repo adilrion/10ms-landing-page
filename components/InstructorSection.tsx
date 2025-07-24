@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client';
 
 import { Section } from '../types/product';
@@ -8,7 +9,7 @@ interface InstructorSectionProps {
 
 export default function InstructorSection({ sections }: InstructorSectionProps) {
   const instructorSection = sections.find(section => section.type === 'instructors');
-  
+
   if (!instructorSection || !instructorSection.values.length) {
     return null;
   }
@@ -37,14 +38,14 @@ export default function InstructorSection({ sections }: InstructorSectionProps) 
                   </div>
                 </div>
               </div>
-              
+
               <div className="lg:col-span-2 space-y-6">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-2">{instructor.name}</h3>
                   <p className="text-lg text-blue-600 font-medium">{instructor.short_description}</p>
                 </div>
-                
-                <div 
+
+                <div
                   className="text-gray-700 leading-relaxed space-y-2"
                   dangerouslySetInnerHTML={{ __html: instructor.description }}
                 />
