@@ -132,10 +132,10 @@ export default function ScrollBasedAds() {
       </section>
 
       {/* Scrolling Progress Indicator */}
-      <section className="bg-white rounded-xl p-4 shadow-sm border">
+      {/* <section className="bg-white rounded-xl p-4 shadow-sm border">
         <div className="space-y-3">
           <div className="flex items-center justify-between text-sm">
-            <span className="font-medium text-gray-700">Course Progress</span>
+            <span className="font-medium text-gray-700">Progress</span>
             <span className="text-blue-600 font-semibold">
               {Math.min(100, Math.floor((scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100))}%
             </span>
@@ -152,7 +152,7 @@ export default function ScrollBasedAds() {
             Keep scrolling to discover more features!
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Social Proof Ticker */}
       {/* <section className="bg-gradient-to-r from-green-500 to-emerald-600 rounded-xl p-4 text-white shadow-lg overflow-hidden">

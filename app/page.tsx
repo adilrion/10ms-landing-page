@@ -128,10 +128,10 @@ export default function Home() {
           {/* Right Column - Multimedia & CTA */}
           <div className="lg:col-span-1 space-y-6">
             <div className="sticky top-8 space-y-6">
-              <TrailerSection data={productData} />\
+              <TrailerSection data={productData} />
               {/* <DynamicCTACards data={productData} /> */}
-              <CTASection ctaText={productData.cta_text} />
               <ScrollBasedAds />
+              <CTASection ctaText={productData.cta_text} />
               <ChecklistSection checklist={productData.checklist} />
 
 
