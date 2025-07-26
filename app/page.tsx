@@ -10,9 +10,9 @@ import ExclusiveFeaturesSection from '@/components/ExclusiveFeaturesSection';
 import FloatingCTABanner from '@/components/FloatingCTABanner';
 import InstructorsSection from '@/components/InstructorsSection';
 import LearningOutcomesSection from '@/components/LearningOutcomesSection';
+import ScrollBasedAds from '@/components/ScrollBasedAds';
 import TitleSection from '@/components/TitleSection';
 import TrailerSection from '@/components/TrailerSection';
-import { Gift } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import CountdownTimer from '../components/CountdownTimer';
 import FAQSection from '../components/FAQSection';
@@ -81,7 +81,7 @@ export default function Home() {
       <StickyCtaBar />
       <FloatingCTABanner />
 
-  
+
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid lg:grid-cols-3 gap-8">
@@ -128,26 +128,14 @@ export default function Home() {
           {/* Right Column - Multimedia & CTA */}
           <div className="lg:col-span-1 space-y-6">
             <div className="sticky top-8 space-y-6">
-              <TrailerSection data={productData} />
+              <TrailerSection data={productData} />\
+              {/* <DynamicCTACards data={productData} /> */}
               <CTASection ctaText={productData.cta_text} />
+              <ScrollBasedAds />
               <ChecklistSection checklist={productData.checklist} />
 
-              {/* Popular Course Card */}
-              <AdvertisingCard
-                type="popular"
-                title="জনপ্রিয় কোর্স"
-                subtitle="৩২,০০০+ শিক্ষার্থী এই কোর্সে এনরোল করেছেন"
-                buttonText="যোগ দিন"
-              />
-              <div className="bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-6 py-3 rounded-xl shadow-lg border-l-4 border-orange-500">
-                <div className="flex items-center space-x-3">
-                  <Gift className="w-6 h-6 text-orange-600" />
-                  <div>
-                    <p className="font-bold font-bangla">বিশেষ অফার!</p>
-                    <p className="text-sm font-bangla">আজই এনরোল করুন এবং ফ্রি বই + লাইভ ক্লাস পান</p>
-                  </div>
-                </div>
-              </div>
+
+
             </div>
 
           </div>
