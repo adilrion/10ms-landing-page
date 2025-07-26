@@ -74,12 +74,10 @@ export default function AboutSection({ sections }: AboutSectionProps) {
   }
 
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            {aboutSection.name}
-          </h2>
+    <section className=" bg-white">
+      <div className="">
+        <div className=" mb-6">
+          <h2 className="text-2xl font-bold text-gray-900 font-bangla">কোর্সের বিস্তারিত</h2>
           {aboutSection.description && (
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               {aboutSection.description}
@@ -87,7 +85,7 @@ export default function AboutSection({ sections }: AboutSectionProps) {
           )}
         </div>
 
-        <div className="space-y-10">
+        <div className="space-y-4">
           {aboutSection.values.map((value, index) => (
             <div
               key={value.id || index}

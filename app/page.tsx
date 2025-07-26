@@ -1,17 +1,24 @@
 'use client';
 
+import AboutSection from '@/components/AboutSection';
+import AdvertisingCard from '@/components/AdvertisingCard';
+import CTASection from '@/components/CTASection';
+import ChecklistSection from '@/components/ChecklistSection';
+import CourseLayoutSection from '@/components/CourseLayoutSection';
+import DescriptionSection from '@/components/DescriptionSection';
+import ExclusiveFeaturesSection from '@/components/ExclusiveFeaturesSection';
+import FloatingCTABanner from '@/components/FloatingCTABanner';
+import InstructorsSection from '@/components/InstructorsSection';
+import LearningOutcomesSection from '@/components/LearningOutcomesSection';
+import TitleSection from '@/components/TitleSection';
+import TrailerSection from '@/components/TrailerSection';
+import { Gift } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import AboutSection from '../components/AboutSection';
 import CountdownTimer from '../components/CountdownTimer';
-import CourseFactsSection from '../components/CourseFactsSection';
 import FAQSection from '../components/FAQSection';
-import FeaturesSection from '../components/FeaturesSection';
 import Footer from '../components/Footer';
-import HeroSection from '../components/HeroSection';
-import InstructorSection from '../components/InstructorSection';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Navbar from '../components/Navbar';
-import PointersSection from '../components/PointersSection';
 import PromotionalModal from '../components/PromotionalModal';
 import StickyCtaBar from '../components/StickyCtaBar';
 import TestimonialsSection from '../components/TestimonialsSection';
@@ -72,16 +79,86 @@ export default function Home() {
       <Navbar />
       <PromotionalModal />
       <StickyCtaBar />
-      <HeroSection data={productData} />
+      <FloatingCTABanner />
+
+  
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Left Column - Content */}
+          <div className="lg:col-span-2 space-y-8">
+            <TitleSection data={productData} />
+            <DescriptionSection data={productData} />
+
+            {/* Advertising Cards Row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <AdvertisingCard
+                type="discount"
+                title="বিশেষ ছাড় অফার!"
+                subtitle="আজই এনরোল করুন এবং ৭০% পর্যন্ত ছাড় পান"
+                buttonText="অফার গ্রহণ করুন"
+              />
+              <AdvertisingCard
+                type="bonus"
+                title="ফ্রি বোনাস প্যাকেজ"
+                subtitle="হার্ডকপি বই + লাইভ ক্লাস + মক টেস্ট"
+                buttonText="বিস্তারিত দেখুন"
+              />
+            </div>
+
+            <InstructorsSection sections={productData.sections} />
+            <CourseLayoutSection sections={productData.sections} />
+            <LearningOutcomesSection sections={productData.sections} />
+
+            {/* Another CTA Card */}
+            <AdvertisingCard
+              type="limited"
+              title="সীমিত সময়ের অফার!"
+              subtitle="মাত্র ২৪ ঘন্টা বাকি - এই সুযোগ হাতছাড়া করবেন না"
+              buttonText="এখনই কিনুন"
+              className="md:col-span-2"
+            />
+
+            <ExclusiveFeaturesSection sections={productData.sections} />
+            <AboutSection sections={productData.sections} />
+            {/* <CourseDetailsSection sections={productData.sections} /> */}
+
+          </div>
+
+          {/* Right Column - Multimedia & CTA */}
+          <div className="lg:col-span-1 space-y-6">
+            <div className="sticky top-8 space-y-6">
+              <TrailerSection data={productData} />
+              <CTASection ctaText={productData.cta_text} />
+              <ChecklistSection checklist={productData.checklist} />
+
+              {/* Popular Course Card */}
+              <AdvertisingCard
+                type="popular"
+                title="জনপ্রিয় কোর্স"
+                subtitle="৩২,০০০+ শিক্ষার্থী এই কোর্সে এনরোল করেছেন"
+                buttonText="যোগ দিন"
+              />
+              <div className="bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-6 py-3 rounded-xl shadow-lg border-l-4 border-orange-500">
+                <div className="flex items-center space-x-3">
+                  <Gift className="w-6 h-6 text-orange-600" />
+                  <div>
+                    <p className="font-bold font-bangla">বিশেষ অফার!</p>
+                    <p className="text-sm font-bangla">আজই এনরোল করুন এবং ফ্রি বই + লাইভ ক্লাস পান</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* Full Width Sections */}
+      <TestimonialsSection sections={productData.sections} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <CountdownTimer />
       </div>
-      <CourseFactsSection checklist={productData.checklist} />
-      <InstructorSection sections={productData.sections} />
-      <FeaturesSection sections={productData.sections} />
-      <AboutSection sections={productData.sections} />
-      <PointersSection sections={productData.sections} />
-      <TestimonialsSection sections={productData.sections} />
       <FAQSection sections={productData.sections} />
       <Footer ctaText={productData.cta_text} />
     </div>

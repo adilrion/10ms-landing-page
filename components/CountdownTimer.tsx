@@ -1,7 +1,7 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { Clock } from 'lucide-react';
+import { useEffect, useState } from 'react';
 
 export default function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({
@@ -31,13 +31,13 @@ export default function CountdownTimer() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-red-500 to-pink-500 text-white p-6 rounded-xl shadow-lg mb-8">
+    <div className="bg-gradient-to-r from-red-500 to-pink-500 text-white p-6 rounded-xl shadow-lg mb-16">
       <div className="text-center space-y-4">
         <div className="flex items-center justify-center space-x-2">
           <Clock className="w-6 h-6" />
           <h3 className="text-xl font-bold font-bangla">বিশেষ অফার শেষ হবে</h3>
         </div>
-        
+
         <div className="flex justify-center space-x-4">
           <div className="bg-white bg-opacity-20 rounded-lg p-3 min-w-[60px]">
             <div className="text-2xl font-bold">{timeLeft.days}</div>
@@ -56,7 +56,7 @@ export default function CountdownTimer() {
             <div className="text-xs font-bangla">সেকেন্ড</div>
           </div>
         </div>
-        
+
         <p className="text-sm opacity-90 font-bangla">
           এই সুযোগ হাতছাড়া করবেন না! আজই এনরোল করুন।
         </p>

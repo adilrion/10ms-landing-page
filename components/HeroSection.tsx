@@ -38,15 +38,7 @@ export default function HeroSection({ data }: HeroSectionProps) {
           {/* Content */}
           <div className="space-y-8">
             {/* Special Offer Alert */}
-            <div className="bg-gradient-to-r from-yellow-400 to-orange-400 text-gray-900 px-6 py-3 rounded-xl shadow-lg border-l-4 border-orange-500">
-              <div className="flex items-center space-x-3">
-                <Gift className="w-6 h-6 text-orange-600" />
-                <div>
-                  <p className="font-bold font-bangla">বিশেষ অফার!</p>
-                  <p className="text-sm font-bangla">আজই এনরোল করুন এবং ফ্রি বই + লাইভ ক্লাস পান</p>
-                </div>
-              </div>
-            </div>
+           
 
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight">

@@ -33,7 +33,7 @@ export default function TestimonialsSection({ sections }: TestimonialsSectionPro
           {testimonialsSection.values.slice(0, 9).map((testimonial, index) => (
             <div
               key={testimonial.id}
-              className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+              className="bg-white rounded-2xl p-6 shadow-sm   transition-all duration-300 transform "
             >
               <div className="space-y-4">
                 {/* Student Info */}
