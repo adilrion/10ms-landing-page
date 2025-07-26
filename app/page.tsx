@@ -130,8 +130,8 @@ export default function Home() {
             <div className="sticky top-8 space-y-6">
               <TrailerSection data={productData} />
               {/* <DynamicCTACards data={productData} /> */}
-              <ScrollBasedAds />
               <CTASection ctaText={productData.cta_text} />
+              <ScrollBasedAds />
               <ChecklistSection checklist={productData.checklist} />
 
 
